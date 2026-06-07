@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aravindh A — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Aravindh A — Creative Technologist Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --cyan: #00f5d4; --pink: #ff2d78; --yellow: #ffe135; --purple: #a855f7; --orange: #ff6b35; --blue: #3b82f6; --bg: #080810; --card: #0f0f1a; --line: rgba(255,255,255,0.08);
@@ -13,15 +13,15 @@
   html { scroll-behavior:smooth; }
   body { background:var(--bg); color:#fff; font-family:'DM Sans',sans-serif; overflow-x:hidden; cursor:none; }
 
-  /* ===== CURSOR ===== */
+  /* ===== MODERN CUSTOM CURSOR ===== */
   #cursorTrail { width:12px; height:12px; background:var(--cyan); border-radius:50%; position:fixed; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition: transform 0.08s, background 0.3s; opacity:0; }
 
-  /* ===== INTRO OVERLAY ===== */
+  /* ===== CINEMATIC AUDIO INTRO OVERLAY ===== */
   #intro-overlay { position:fixed; inset:0; z-index:1000; background:#000; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:opacity 0.8s cubic-bezier(0.25,1,0.5,1), visibility 0.8s; overflow:hidden; }
   #intro-overlay::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.8) 100%), repeating-linear-gradient(0deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0.03) 1px, rgba(0,0,0,0) 2px); pointer-events:none; }
   #intro-overlay.hidden { opacity:0; visibility:hidden; pointer-events:none; }
 
-  #skip-btn { position:absolute; top:40px; right:40px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#666; font-family:'Syne',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:10px 20px; border-radius:50px; cursor:pointer; z-index:10; transition:all 0.3s; }
+  #skip-btn { position:absolute; top:40px; right:40px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#888; font-family:'Syne',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:10px 20px; border-radius:50px; cursor:pointer; z-index:10; transition:all 0.3s; }
   #skip-btn:hover { background:#fff; color:#000; border-color:#fff; }
 
   .intro-scene { display:flex; flex-direction:column; align-items:center; gap:0; position:relative; }
@@ -46,10 +46,7 @@
   #enter-btn.show { opacity:1; pointer-events:auto; transform:translateY(0); }
   #enter-btn:hover { background:#fff; box-shadow:0 0 40px rgba(255,255,255,0.6); transform:translateY(-3px); }
 
-  .sparkle { position:absolute; width:6px; height:6px; border-radius:50%; animation:sparkleFloat var(--sd) ease-in-out infinite alternate; animation-delay:var(--delay); }
-  @keyframes sparkleFloat { from { transform:translate(0,0) scale(0.5); opacity:0.3; } to { transform:translate(var(--tx),var(--ty)) scale(1.2); opacity:1; } }
-
-  /* ===== MAIN PORTFOLIO ===== */
+  /* ===== MAIN HIGH-END INTERACTIVE WORKSPACE ===== */
   #main-portfolio { display:none; opacity:0; transition:opacity 1s; padding:0; width:100%; min-height:100vh; position:relative; z-index:1; }
   #main-portfolio.visible { display:block; opacity:1; }
   .stars { position:fixed; inset:0; z-index:0; pointer-events:none; background:radial-gradient(circle at 50% 50%, #101026 0%, #080810 100%); overflow:hidden; }
@@ -69,17 +66,18 @@
   .hero-tag { font-family:'Syne',sans-serif; font-size:16px; font-weight:600; color:var(--cyan); letter-spacing:4px; text-transform:uppercase; margin-bottom:20px; }
   .hero-name { font-family:'Syne',sans-serif; font-size:96px; font-weight:800; text-transform:uppercase; line-height:0.9; letter-spacing:-3px; margin-bottom:30px; }
   .hero-name span { color:transparent; -webkit-text-stroke:1.5px rgba(255,255,255,0.2); }
-  .hero-sub { font-size:24px; color:#aaa; max-width:600px; line-height:1.6; font-weight:300; margin-bottom:40px; }
+  .hero-sub { font-size:24px; color:#aaa; max-width:700px; line-height:1.6; font-weight:300; margin-bottom:40px; }
   .hero-cta { display:inline-flex; align-items:center; gap:15px; background:transparent; border:1px solid var(--cyan); color:var(--cyan); font-family:'Syne',sans-serif; font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:16px 36px; border-radius:4px; cursor:pointer; position:relative; z-index:1; transition:color 0.3s; }
   .hero-cta:hover { color:#000; background:var(--cyan); }
 
+  /* ===== DETAILED MINDMAP CORE GRID ===== */
   .mindmap-grid { display:grid; grid-template-columns:repeat(12, 1fr); gap:30px; margin-top:20px; }
   .mindmap-node { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:40px; transition:all 0.5s ease; opacity:0; transform:translateY(40px); }
   .mindmap-node.visible { opacity:1; transform:translateY(0); }
   .mindmap-node:hover { border-color:rgba(255,255,255,0.2); background:rgba(15,15,26,0.9); transform:translateY(-5px); }
 
-  .span-4 { grid-column: span 4; } .span-5 { grid-column: span 5; } .span-6 { grid-column: span 6; } .span-7 { grid-column: span 7; } .span-12 { grid-column: span 12; }
-  .node-icon { font-size:24px; color:var(--purple); margin-bottom:24px; display:inline-block; }
+  .span-4 { grid-column: span 4; } .span-5 { grid-column: span 5; } .span-6 { grid-column: span 6; } .span-7 { grid-column: span 7; } .span-8 { grid-column: span 8; } .span-12 { grid-column: span 12; }
+  .node-icon { font-size:26px; color:var(--purple); margin-bottom:24px; display:inline-block; }
   .node-title { font-family:'Syne',sans-serif; font-size:24px; font-weight:700; margin-bottom:16px; }
   .node-p { color:#aaa; font-size:16px; line-height:1.6; font-weight:300; }
 
@@ -91,9 +89,11 @@
   .skill-track { height:4px; background:rgba(255,255,255,0.05); border-radius:2px; overflow:hidden; }
   .skill-bar { height:100%; width:0; background:linear-gradient(to right, var(--cyan), var(--blue)); transition:width 1.5s ease; }
 
+  /* ====== PREMIUM PROJECTS LAYOUT ====== */
   .project-card { background:#0c0c14; border-radius:12px; overflow:hidden; border:1px solid var(--line); display:flex; flex-direction:column; height:100%; transition:all 0.4s; }
-  .project-banner { height:200px; background:linear-gradient(45deg, #181830, #0f0f1a); position:relative; display:flex; align-items:center; justify-content:center; }
-  .project-tag { position:absolute; top:20px; left:20px; background:rgba(0,245,212,0.1); border:1px solid var(--cyan); color:var(--cyan); font-size:10px; font-weight:700; padding:4px 10px; border-radius:4px; text-transform:uppercase; }
+  .project-card:hover { transform:translateY(-8px); border-color:rgba(255,255,255,0.2); }
+  .project-banner { height:220px; background:linear-gradient(45deg, #181830, #0f0f1a); position:relative; display:flex; align-items:center; justify-content:center; }
+  .project-tag { position:absolute; top:20px; left:20px; background:rgba(0,245,212,0.1); border:1px solid var(--cyan); color:var(--cyan); font-size:10px; font-weight:700; padding:4px 10px; border-radius:4px; text-transform:uppercase; letter-spacing:1px; }
   .project-body { padding:30px; }
   .project-tech { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
   .tech-pill { font-size:11px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); padding:4px 10px; border-radius:4px; color:#aaa; }
@@ -102,11 +102,11 @@
   .contact-email { font-family:'Syne',sans-serif; font-size:36px; font-weight:800; color:#fff; text-decoration:none; margin:30px 0; display:block; transition:color 0.3s; word-break:break-all; }
   .contact-email:hover { color:var(--cyan); }
   .social-links { display:flex; justify-content:center; gap:30px; margin-top:40px; }
-  .social-link { font-size:13px; font-weight:700; color:#666; text-decoration:none; text-transform:uppercase; letter-spacing:2px; }
+  .social-link { font-size:13px; font-weight:700; color:#666; text-decoration:none; text-transform:uppercase; letter-spacing:2px; transition:color 0.3s; }
   .social-link:hover { color:#fff; }
 
-  @media(max-width:1024px) { .span-4, .span-5, .span-6, .span-7 { grid-column: span 6; } .hero-name { font-size:72px; } }
-  @media(max-width:768px) { .span-4, .span-5, .span-6, .span-7 { grid-column: span 12; } .hero-name { font-size:48px; } .sec-heading { font-size:38px; } .nav-dots { display:none; } }
+  @media(max-width:1024px) { .span-4, .span-5, .span-6, .span-7, .span-8 { grid-column: span 6; } .hero-name { font-size:72px; } }
+  @media(max-width:768px) { .span-4, .span-5, .span-6, .span-7, .span-8, .span-12 { grid-column: span 12; } .hero-name { font-size:48px; } .sec-heading { font-size:38px; } .nav-dots { display:none; } }
 </style>
 </head>
 <body>
@@ -145,11 +145,12 @@
   </section>
 
   <section id="about">
-    <div class="sec-title">01 // Profile</div>
+    <div class="sec-title">01 // Profile Nodes</div>
     <h2 class="sec-heading">About The Developer</h2>
     <div class="mindmap-grid">
       <div class="mindmap-node span-7"><span class="node-icon">🛰️</span><h3 class="node-title">Mission Statement</h3><p class="node-p">I bridge raw computational scripts with clean, modular layout tracking systems. My academic trajectory centers around compiling machine intelligence systems and responsive databases designed to execute data securely.</p></div>
       <div class="mindmap-node span-5"><span class="node-icon">🧬</span><h3 class="node-title">Core Philosophies</h3><p class="node-p">Code shouldn't just run; it must scale. My design target remains maximum efficiency and responsive system integrity.</p></div>
+      <div class="mindmap-node span-12"><span class="node-icon">🚀</span><h3 class="node-title">Technical Objectives</h3><p class="node-p">Developing multi-tier application architectures that optimize query responses while remaining highly interactive on the frontend layer.</p></div>
     </div>
   </section>
 
@@ -163,8 +164,7 @@
       </div>
     </div>
   </section>
-
-  <section id="skills">
+    <section id="skills">
     <div class="sec-title">03 // Tech Stack Data</div>
     <h2 class="sec-heading">Engine Competencies</h2>
     <div class="mindmap-grid">
@@ -217,7 +217,7 @@
   </section>
 
   <section id="contact">
-    <div class="sec-title">07 // Terminal link</div>
+    <div class="sec-title">07 // Terminal Link</div>
     <h2 class="sec-heading">Initiate Connection</h2>
     <div class="contact-box">
       <span style="font-size:32px;">📬</span><a href="mailto:aravindhjoshua10@gmail.com" class="contact-email">aravindhjoshua10@gmail.com</a>
@@ -225,6 +225,7 @@
     </div>
   </section>
 </div>
+
 <script>
 // Follower Tracking
 const trail = document.getElementById('cursorTrail');
